@@ -23,6 +23,8 @@ RUN pecl install imagick \
     && docker-php-ext-install pcntl tokenizer xml zip intl
 RUN apk del -f .build-deps
 
+RUN apk add nodejs npm yarn
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
 
 ARG GROUP_ID
